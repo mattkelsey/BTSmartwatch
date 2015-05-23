@@ -67,67 +67,67 @@ void loop() {
     drawVertSeperator(85, 40);
     */
     //////////////////////////////////////////////////////////////OLD
-//    if (Serial.available() > 0) {
-//        //display.fillCircle(10, 10, 5, WHITE);
-//        // Read a byte from the serial buffer.
-//        display.clearDisplay();
-//        char incomingByte = (char)Serial.read();
-//        //if(incomingByte != NULL){
-//        if(incomingByte == 'n' && flag == false) {
-//            flag = true;
-//        } else if (flag == true) {
-//            incomingNotification += incomingByte;
-//            display.setTextSize(1);
-//            display.setCursor(0, 0);
-//            display.setTextColor(WHITE);
-//            display.print(incomingNotification);
-//            display.display();
-//
-//        } else {
-//            incomingString += incomingByte;
-//            display.setTextSize(3);
-//            display.setCursor(25, 25);
-//            display.setTextColor(WHITE);
-//            display.print(incomingString);
-//            display.display();
-//        }
-//        //}
-//
-//    } else {
-//
-//        incomingString= "";
-//        notificationFeed += incomingNotification;
-//        incomingNotification= "";
-//        flag = false;
-//    }
-///////////////////////////////////////////end old
-
     if (Serial.available() > 0) {
-
+        //display.fillCircle(10, 10, 5, WHITE);
+        // Read a byte from the serial buffer.
+        display.clearDisplay();
         char incomingByte = (char)Serial.read();
-        incomingString += incomingByte;
-
-    } else {
-        if (incomingString.charAt(0) == 'n') {
-            display.clearDisplay();
+        //if(incomingByte != NULL){
+        if(incomingByte == 'n' && flag == false) {
+            flag = true;
+        } else if (flag == true) {
+            incomingNotification += incomingByte;
             display.setTextSize(1);
             display.setCursor(0, 0);
             display.setTextColor(WHITE);
             display.print(incomingNotification);
             display.display();
+
         } else {
-            display.clearDisplay();
+            incomingString += incomingByte;
             display.setTextSize(3);
             display.setCursor(25, 25);
             display.setTextColor(WHITE);
             display.print(incomingString);
             display.display();
         }
+        //}
+
+    } else {
+
         incomingString= "";
-        //notificationFeed += incomingNotification;
+        notificationFeed += incomingNotification;
         incomingNotification= "";
         flag = false;
     }
+///////////////////////////////////////////end old
+
+//    if (Serial.available() > 0) {
+//
+//        char incomingByte = (char)Serial.read();
+//        incomingString += incomingByte;
+//
+//    } else {
+//        if (incomingString.charAt(0) == 'n') {
+//            display.clearDisplay();
+//            display.setTextSize(1);
+//            display.setCursor(0, 0);
+//            display.setTextColor(WHITE);
+//            display.print(incomingNotification);
+//            display.display();
+//        } else {
+//            display.clearDisplay();
+//            display.setTextSize(3);
+//            display.setCursor(25, 25);
+//            display.setTextColor(WHITE);
+//            display.print(incomingString);
+//            display.display();
+//        }
+//        incomingString= "";
+//        //notificationFeed += incomingNotification;
+//        incomingNotification= "";
+//        flag = false;
+//    }
 }
 void drawVertSeperator(int pos, int length) {
     int y0 = 32-length/2;
