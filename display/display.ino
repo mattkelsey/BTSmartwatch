@@ -75,6 +75,7 @@ void loop() {
         //if(incomingByte != NULL){
         if(incomingByte == 'n' && flag == false) {
             flag = true;
+            delay(500);
         } else if (flag == true) {
             incomingNotification += incomingByte;
             display.setTextSize(1);
@@ -94,7 +95,6 @@ void loop() {
         //}
 
     } else {
-
         incomingString= "";
         notificationFeed += incomingNotification;
         incomingNotification= "";
