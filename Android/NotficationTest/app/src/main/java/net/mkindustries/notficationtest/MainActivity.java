@@ -92,10 +92,6 @@ public class MainActivity extends Activity {
 
 
 
-        //bt stuff (I know. I write the best documentation ever you don't have to remind me) ((im in a bad mood, things are working))
-
-
-
         sendString = (Button) findViewById(R.id.sendString);
         editString = (EditText) findViewById(R.id.editString);
         connectBtn = (Button) findViewById(R.id.connectBtn);
